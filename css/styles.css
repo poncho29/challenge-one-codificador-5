@@ -30,14 +30,21 @@ body {
   background-color: var(--ligth-blue-100);
 }
 
+@media (min-width: 1024px) {
+  body {
+    position: relative;
+  }
+}
+
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-.container {
+/* .container {
   max-width: 75rem;
   margin: 0 auto;
-}
+} */
 
 .none {
   display: none;
@@ -70,8 +77,24 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (min-width: 1024px) {
+  .main {
+    display: flex;
+    gap: 5rem;
+    padding: 0 2.5rem 2.5rem 15rem;
+  }
+}
+
 .editor {
   margin-bottom: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .editor {
+    width: 100%;
+    max-width: 42.5rem;
+    margin-bottom: 0;
+  }
 }
 
 .text {
@@ -90,6 +113,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .text::placeholder { 
   color: var(--dark-blue-300);
+}
+
+@media (min-width: 1024px) {
+  .text {
+    max-height: 25rem;
+    margin: 4.5rem 0 5.2rem 0;
+  }
 }
 
 .text-warning {
@@ -137,6 +167,21 @@ h1, h2, h3, h4, h5, h6 {
 .text-list {
   width: 100%;
   margin-bottom: 2.5rem;
+  border-radius: 2rem;
+  background-color: var(--white);
+}
+
+@media (min-width: 1024px) {
+  .text-list {
+    height: 100%;
+    max-width: 25rem;
+    max-height: 44.75rem;
+    margin-bottom: 0;
+    top: 2.5rem;
+    right: 2.5rem;
+    position: absolute;
+    overflow-y: overlay;
+  }
 }
 
 .empty-list {
@@ -148,8 +193,6 @@ h1, h2, h3, h4, h5, h6 {
   width: inherit;
   height: 11.625rem;
   padding: 2rem;
-  border-radius: 2rem;
-  background-color: var(--white);
 }
 
 .empty-list h4 {
