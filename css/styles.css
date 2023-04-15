@@ -162,6 +162,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 4.1875rem;
   color: var(--white);
   border: none;
+  cursor: pointer;
   border-radius: 1.5rem;
   background-color: var(--dark-blue-300);
 }
@@ -171,6 +172,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 4.1875rem;
   color: var(--dark-blue-300);
   border-radius: 1.5rem;
+  cursor: pointer;
   border: 1px solid var(--dark-blue-300);
   background-color: transparent;
 }
@@ -198,13 +200,6 @@ h1, h2, h3, h4, h5, h6 {
     right: 2.5rem;
     position: absolute;
     overflow-y: overlay;
-  }
-}
-
-@media (min-width: 1024px) {
-  .text-list {
-    top: 2.5rem;
-    right: 2.5rem;
   }
 }
 
