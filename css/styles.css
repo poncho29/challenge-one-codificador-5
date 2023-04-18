@@ -193,6 +193,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 1024px) {
   .text-list {
+    display: flex;
     height: calc(100vh - 6rem);
     max-width: 25rem;
     margin-bottom: 0;
