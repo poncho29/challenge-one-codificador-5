@@ -19,6 +19,16 @@ export const valideText = (text) => {
   }
 }
 
+export const copyText = async (text) => {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (err) {
+    console.error('Error al copiar al portapapeles:', err);
+    return false;
+  }
+}
+
 // Capturando el texto para encriptar
 export const encryptText = (text) => {
   if (!text) return;
@@ -33,4 +43,39 @@ export const encryptText = (text) => {
   });
 
   return newText;
+}
+
+// Capturando el texto para encriptar
+export const decryptText = (text) => {
+  if (!text) return;
+
+  const regex = new RegExp(/ai|enter|imes|ober|ufat/, 'g');
+  const newText = text.replace(regex, (e) => {
+    if (e === 'ai') return 'a';
+    if (e === 'enter') return 'e';
+    if (e === 'imes') return 'i';
+    if (e === 'ober') return 'o';
+    if (e === 'ufat') return 'u';
+  });
+
+  return newText;
+}
+
+// Crear la card con el texto ecriptado
+export const createCard = (text) => {
+  const div = document.createElement('div');
+  const span = document.createElement('span');
+  const button  = document.createElement('button');
+
+  div.classList.add('card-text');
+  span.classList.add('encrypted-text');
+  button.classList.add('btn-secondary');
+  span.textContent = text || '';
+  button.textContent = 'Copiar';
+  span.id = 'text-card';
+  button.id = 'btn-copy';
+
+  div.appendChild(span);
+  div.appendChild(button);
+  return div;
 }
